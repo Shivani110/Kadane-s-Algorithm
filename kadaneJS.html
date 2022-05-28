@@ -1,0 +1,27 @@
+<html>
+<body>
+<script>
+function contiguousSubArray(n, x)
+{
+	let intmax = Math.pow(2, 53)
+	let far = -intmax - 1
+	let end = 0
+	
+	for (var p = 0; p < x; p++)
+	{
+		end = end + n[p]
+		if (far < end)
+			far = end
+
+		if (end < 0)
+			end = 0
+	}
+	return far
+}
+let n = [-3, -2, 1, 2, 3, -4, -5, -1]
+document.write("The Maximum sum of a contiguous SubArray is ",
+			contiguousSubArray(n, n.length))
+</script>
+</body>
+</html>
+
